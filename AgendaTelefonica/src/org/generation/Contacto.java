@@ -61,7 +61,7 @@ public class Contacto {
 	
 	
 	// Método equals, compara dos objetos Contacto
-	@Override
+	
 	public boolean equals(Object obj) {
 		// Si son el mismo objeto en memoria
 		if (this == obj) return true;
@@ -87,7 +87,7 @@ public class Contacto {
 	// Se usa en colecciones como HashSet o HashMap para encontrar objetos rápidamente
 	// Dos contactos con el mismo nombre y apellido generan el mismo hash, 
 	// para que se reconozcan como iguales aunque el teléfono sea distinto
-	@Override
+	
 	public int hashCode() {
 		
 		int hash = 7;
@@ -101,7 +101,7 @@ public class Contacto {
 	
 	
 	//Devuelve una representación en texto del contacto, 
-	@Override
+	
 	public String toString() {
 		return nombre + " " + apellido + " - " + telefono;
 	}
