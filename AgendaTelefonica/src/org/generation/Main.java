@@ -7,6 +7,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		
+		//Instancia donde se guardaran los contactos
 		Agenda agenda = new Agenda();
 
 		while (true) {
@@ -25,6 +27,7 @@ public class Main {
 			switch (opcion) {
 			case "1":
 				while (true) {
+					// Se intenta ejecutar el código que puede causar un error
 					try {
 						System.out.print("Nombre: ");
 						String nombre = sc.nextLine();
@@ -34,7 +37,11 @@ public class Main {
 						String telefono = sc.nextLine();
 						agenda.anadirContacto(new Contacto(nombre, apellido, telefono));
 						break;
+						// Si ocurre un error al crear el contacto
+						// Se captura la excepción de tipo IllegalArgumentException
 					} catch (IllegalArgumentException e) {
+						// Y si muestra el mensaje de error que se definió en la clase Contacto
+						 // Y vuelve a pedir que ingrese los datos correctamente
 						System.out.println("Error: " + e.getMessage());
 						System.out.println("Intente de nuevo.\n");
 					}
